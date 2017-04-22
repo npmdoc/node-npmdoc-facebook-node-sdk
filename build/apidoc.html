@@ -1,0 +1,3068 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/amachang/facebook-node-sdk#readme"
+
+    >facebook-node-sdk (v0.2.0)</a>
+</h1>
+<h4>Node.js SDK for the Facebook API</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.facebook-node-sdk">module facebook-node-sdk</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.facebook-node-sdk">
+            function <span class="apidocSignatureSpan"></span>facebook-node-sdk
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.loginRequired">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.</span>loginRequired
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.middleware">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.</span>middleware
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.multipart">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.</span>multipart
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.</span>super_
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.FacebookApiError">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.</span>super_.FacebookApiError
+            <span class="apidocSignatureSpan">(result)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">facebook-node-sdk.</span>cbutil</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">facebook-node-sdk.</span>multipart.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">facebook-node-sdk.</span>requestutil</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">facebook-node-sdk.</span>super_.FacebookApiError.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">facebook-node-sdk.</span>super_.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.facebook-node-sdk.cbutil">module facebook-node-sdk.cbutil</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.cbutil.errorLog">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.cbutil.</span>errorLog
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.cbutil.returnToCallback">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.cbutil.</span>returnToCallback
+            <span class="apidocSignatureSpan">(callback, handleError, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.cbutil.wrap">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.cbutil.</span>wrap
+            <span class="apidocSignatureSpan">(fn, addError, callbackIndex)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.facebook-node-sdk.multipart">module facebook-node-sdk.multipart</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.multipart.multipart">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.</span>multipart
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.facebook-node-sdk.multipart.prototype">module facebook-node-sdk.multipart.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.multipart.prototype.addBuffer">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.multipart.prototype.</span>addBuffer
+            <span class="apidocSignatureSpan">(name, buffer, mime, fileName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.multipart.prototype.addFile">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.multipart.prototype.</span>addFile
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.multipart.prototype.addStream">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.multipart.prototype.</span>addStream
+            <span class="apidocSignatureSpan">(name, size, stream, mime, fileName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.multipart.prototype.addText">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.multipart.prototype.</span>addText
+            <span class="apidocSignatureSpan">(name, text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.multipart.prototype.generateBoundary">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.multipart.prototype.</span>generateBoundary
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.multipart.prototype.getContentLength">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.multipart.prototype.</span>getContentLength
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.multipart.prototype.getContentType">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.multipart.prototype.</span>getContentType
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.multipart.prototype.writeToStream">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.multipart.prototype.</span>writeToStream
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">facebook-node-sdk.multipart.prototype.</span>boundary</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">facebook-node-sdk.multipart.prototype.</span>contentDispositionFilenamePrefix</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">facebook-node-sdk.multipart.prototype.</span>contentDispositionFilenameSuffix</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">facebook-node-sdk.multipart.prototype.</span>contentDispositionPrefix</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">facebook-node-sdk.multipart.prototype.</span>contentDispositionSuffix</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">facebook-node-sdk.multipart.prototype.</span>contentTypeValuePrefix</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">facebook-node-sdk.multipart.prototype.</span>crlf</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">facebook-node-sdk.multipart.prototype.</span>dash</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">facebook-node-sdk.multipart.prototype.</span>partContentTypePrefix</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.facebook-node-sdk.requestutil">module facebook-node-sdk.requestutil</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.requestutil.FacebookApiRequest">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.requestutil.</span>FacebookApiRequest
+            <span class="apidocSignatureSpan">(http, host, port, path, params)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.requestutil.requestFacebookApi">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.requestutil.</span>requestFacebookApi
+            <span class="apidocSignatureSpan">(http, host, port, path, params, withMultipart, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.facebook-node-sdk.super_">module facebook-node-sdk.super_</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.super_">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.</span>super_
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.FacebookApiError">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.</span>FacebookApiError
+            <span class="apidocSignatureSpan">(result)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.facebook-node-sdk.super_.FacebookApiError">module facebook-node-sdk.super_.FacebookApiError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.FacebookApiError.FacebookApiError">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.</span>FacebookApiError
+            <span class="apidocSignatureSpan">(result)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.FacebookApiError.super_">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.FacebookApiError.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.facebook-node-sdk.super_.FacebookApiError.prototype">module facebook-node-sdk.super_.FacebookApiError.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.FacebookApiError.prototype.getResult">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.FacebookApiError.prototype.</span>getResult
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.FacebookApiError.prototype.getType">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.FacebookApiError.prototype.</span>getType
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.FacebookApiError.prototype.toString">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.FacebookApiError.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">facebook-node-sdk.super_.FacebookApiError.prototype.</span>result</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.facebook-node-sdk.super_.prototype">module facebook-node-sdk.super_.prototype</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>fileUploadSupport</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.api">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>api
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.base64UrlDecode">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>base64UrlDecode
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.clearCookie">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>clearCookie
+            <span class="apidocSignatureSpan">(key, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.createApiError">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>createApiError
+            <span class="apidocSignatureSpan">(result)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.destroySession">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>destroySession
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.errorLog">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>errorLog
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.establishCSRFTokenState">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>establishCSRFTokenState
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.getAccessToken">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getAccessToken
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.getAccessTokenFromCode">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getAccessTokenFromCode
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.getApiHost">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getApiHost
+            <span class="apidocSignatureSpan">(method)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.getApiSecret">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getApiSecret
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.getAppId">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getAppId
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.getAppSecret">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getAppSecret
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.getApplicationAccessToken">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getApplicationAccessToken
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.getCode">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getCode
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.getCookie">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getCookie
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.getCurrentUrl">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getCurrentUrl
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.getFileUploadSupport">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getFileUploadSupport
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.getLoginStatusUrl">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getLoginStatusUrl
+            <span class="apidocSignatureSpan">(params)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.getLoginUrl">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getLoginUrl
+            <span class="apidocSignatureSpan">(params)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.getLogoutUrl">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getLogoutUrl
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.getMetadataCookie">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getMetadataCookie
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.getMetadataCookieName">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getMetadataCookieName
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.getRequestParam">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getRequestParam
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.getSignedRequest">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getSignedRequest
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.getSignedRequestCookieName">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getSignedRequestCookieName
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.getUser">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getUser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.getUserAccessToken">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getUserAccessToken
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.getUserFromAccessToken">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getUserFromAccessToken
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.getUserFromAvailableData">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getUserFromAvailableData
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.graph">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>graph
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.hasCookie">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>hasCookie
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.isVideoPost">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>isVideoPost
+            <span class="apidocSignatureSpan">(path, method)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.makeRequest">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>makeRequest
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.mergeObject">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>mergeObject
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.oauthRequest">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>oauthRequest
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.parseSignedRequest">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>parseSignedRequest
+            <span class="apidocSignatureSpan">(signedRequest)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.restserver">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>restserver
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.sentHeaders">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>sentHeaders
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.setAccessToken">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>setAccessToken
+            <span class="apidocSignatureSpan">(accessToken)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.setApiSecret">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>setApiSecret
+            <span class="apidocSignatureSpan">(appSecret)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.setAppId">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>setAppId
+            <span class="apidocSignatureSpan">(appId)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.setAppSecret">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>setAppSecret
+            <span class="apidocSignatureSpan">(appSecret)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.setFileUploadSupport">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>setFileUploadSupport
+            <span class="apidocSignatureSpan">(fileUploadSupport)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.shouldRetainParam">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>shouldRetainParam
+            <span class="apidocSignatureSpan">(param)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-node-sdk.super_.prototype.useFileUploadSupport">
+            function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>useFileUploadSupport
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>accessToken</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>apiReadOnlyCalls</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>appId</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>appSecret</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>currentUrl</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>dropQueryParams</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>request</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>response</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>sessionNameMap</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>signedRequest</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>state</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>user</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.facebook-node-sdk" id="apidoc.module.facebook-node-sdk">module facebook-node-sdk</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.facebook-node-sdk" id="apidoc.element.facebook-node-sdk.facebook-node-sdk">
+        function <span class="apidocSignatureSpan"></span>facebook-node-sdk
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Facebook(config) {
+  this.hasSession = !!(config.request &#x26;&#x26; config.request.session);
+  BaseFacebook.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.loginRequired" id="apidoc.element.facebook-node-sdk.loginRequired">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.</span>loginRequired
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loginRequired = function (config) {
+  return function(req, res, next) {
+    if (!req.facebook) {
+      Facebook.middleware(config)(req, res, afterNew);
+    }
+    else {
+      afterNew();
+    }
+    function afterNew() {
+      req.facebook.getUser(function(err, user) {
+        if (err) {
+          next(err);
+          next = null;
+        }
+        else {
+          if (user === 0) {
+            try {
+              var loginUrl = req.facebook.getLoginUrl(config)
+            }
+            catch (err) {
+              next(err);
+              next = null;
+              return;
+            }
+            res.redirect(loginUrl);
+            next = null;
+          }
+          else {
+            next();
+            next = null;
+          }
+        }
+      });
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+app.configure(function () {
+  app.use(express.bodyParser());
+  app.use(express.cookieParser());
+  app.use(express.session({ secret: &#x27;foo bar&#x27; }));
+  app.use(Facebook.middleware({ appId: &#x27;YOUR_APP_ID&#x27;, secret: &#x27;YOUR_APP_SECRET&#x27; }));
+});
+
+app.get(&#x27;/&#x27;, Facebook.<span class="apidocCodeKeywordSpan">loginRequired</span>(), function (req, res) {
+  req.facebook.api(&#x27;/me&#x27;, function(err, user) {
+    res.writeHead(200, {&#x27;Content-Type&#x27;: &#x27;text/plain&#x27;});
+    res.end(&#x27;Hello, &#x27; + user.name + &#x27;!&#x27;);
+  });
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.middleware" id="apidoc.element.facebook-node-sdk.middleware">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.</span>middleware
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">middleware = function (config) {
+  return function(req, res, next) {
+    config.request = req;
+    config.response = res;
+    req.facebook = new Facebook(config);
+    next();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var app = express.createServer();
+
+app.configure(function () {
+  app.use(express.bodyParser());
+  app.use(express.cookieParser());
+  app.use(express.session({ secret: &#x27;foo bar&#x27; }));
+  app.use(Facebook.<span class="apidocCodeKeywordSpan">middleware</span>({ appId: &#x27;YOUR_APP_ID&#x27;, secret: &#x27;YOUR_APP_SECRET
+&#x27; }));
+});
+
+app.get(&#x27;/&#x27;, Facebook.loginRequired(), function (req, res) {
+  req.facebook.api(&#x27;/me&#x27;, function(err, user) {
+    res.writeHead(200, {&#x27;Content-Type&#x27;: &#x27;text/plain&#x27;});
+    res.end(&#x27;Hello, &#x27; + user.name + &#x27;!&#x27;);
+  });
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.multipart" id="apidoc.element.facebook-node-sdk.multipart">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.</span>multipart
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Multipart() {
+  this.dash = new Buffer(&#x27;--&#x27;, &#x27;ascii&#x27;);
+
+  this.boundary = this.generateBoundary();
+
+  this.parts = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_" id="apidoc.element.facebook-node-sdk.super_">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.</span>super_
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function BaseFacebook(config) {
+  if (config.hasOwnProperty(&#x27;request&#x27;)) {
+    this.request = config.request;
+  }
+  if (config.hasOwnProperty(&#x27;response&#x27;)) {
+    this.response = config.response;
+  }
+  if (config.hasOwnProperty(&#x27;currentUrl&#x27;)) {
+    this.currentUrl = config.currentUrl;
+  }
+  this.setAppId(config.appId);
+  this.setAppSecret(config.secret);
+  if (config.hasOwnProperty(&#x27;fileUpload&#x27;)) {
+    this.setFileUploadSupport(config.fileUpload);
+  }
+
+  var state = this.getPersistentData(&#x27;state&#x27;);
+  if (state) {
+    this.state = state;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.FacebookApiError" id="apidoc.element.facebook-node-sdk.super_.FacebookApiError">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.</span>super_.FacebookApiError
+        <span class="apidocSignatureSpan">(result)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function FacebookApiError(result) {
+  this.result = result;
+
+  this.code = this.result.hasOwnProperty(&#x27;error_code&#x27;) ? result.error_code : 0;
+
+  if (result.hasOwnProperty(&#x27;error_description&#x27;)) {
+    // OAuth 2.0 Draft 10 style
+    var msg = result.error_description;
+  } else if (result.hasOwnProperty(&#x27;error&#x27;) &#x26;&#x26; result.error &#x26;&#x26; typeof (result.error) === &#x27;object&#x27;) {
+    // OAuth 2.0 Draft 00 style
+    var msg = result.error.message;
+  } else if (result.hasOwnProperty(&#x27;error_msg&#x27;)) {
+    // Rest server style
+    var msg = result.error_msg;
+  } else {
+    var msg = &#x27;Unknown Error. Check getResult()&#x27;;
+  }
+
+  Error.apply(this, []);
+  this.message = msg;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.facebook-node-sdk.cbutil" id="apidoc.module.facebook-node-sdk.cbutil">module facebook-node-sdk.cbutil</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.cbutil.errorLog" id="apidoc.element.facebook-node-sdk.cbutil.errorLog">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.cbutil.</span>errorLog
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">errorLog = function (msg) {
+  console.error(msg);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+function wrapCallback(callback, /* opt */addError) {
+assert.ok(callback.name !== &#x27;__cbUtilwrappedCallback__&#x27;);
+var called = false;
+return function __cbUtilWrappedCallback__() {
+  if (called === true) {
+    exports.<span class="apidocCodeKeywordSpan">errorLog</span>(new Error(&#x27;Cannot call callback twice.&#x27;).stack);
+  }
+  else {
+    called = true;
+    try {
+      if (addError === true) {
+        // to array
+        var args = Array.prototype.slice.call(arguments);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.cbutil.returnToCallback" id="apidoc.element.facebook-node-sdk.cbutil.returnToCallback">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.cbutil.</span>returnToCallback
+        <span class="apidocSignatureSpan">(callback, handleError, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">returnToCallback = function (callback, handleError, fn) {
+  return function() {
+    try {
+      if (handleError) {
+        callback(null, fn.apply(this, arguments));
+      }
+      else {
+        var args = Array.prototype.slice.call(arguments);
+        var e = args.shift();
+        if (e) {
+          throw e;
+        }
+        callback(null, fn.apply(this, args));
+      }
+    }
+    catch (err) {
+      callback(err, null);
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var self = this;
+fs.open(filePath, &#x27;r&#x27;, function(err, fd) {
+  if (err) {
+    callback(err);
+    return;
+  }
+  try {
+    fs.fstat(fd, cb.<span class="apidocCodeKeywordSpan">returnToCallback</span>(callback, false, function(stat) {
+      var fileName = path.basename(filePath);
+      self.addStream(name, stat.size, fs.createReadStream(filePath, { fd: fd }), null, fileName);
+      return null;
+    }));
+  }
+  catch (e) {
+    callback(e);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.cbutil.wrap" id="apidoc.element.facebook-node-sdk.cbutil.wrap">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.cbutil.</span>wrap
+        <span class="apidocSignatureSpan">(fn, addError, callbackIndex)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function wrap(fn, addError, callbackIndex) {
+  if (fn.name === &#x27;__cbUtilWrapped__&#x27;) {
+    return fn;
+  }
+  return function __cbUtilWrapped__() {
+    var index = (callbackIndex === undefined) ? arguments.length - 1 : callbackIndex;
+    var callback = arguments[index];
+    if (typeof callback !== &#x27;function&#x27;) {
+      throw new Error(&#x27;Callback is not a function.&#x27;);
+    }
+    callback = wrapCallback(callback, addError);
+    arguments[index] = callback;
+    try {
+      fn.apply(this, arguments);
+    }
+    catch (err) {
+      callback(err, null);
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+  catch (e) {
+    callback(e);
+  }
+});
+};
+
+Multipart.prototype.addFile = cb.<span class="apidocCodeKeywordSpan">wrap</span>(Multipart.prototype.addFile);
+
+Multipart.prototype.addBuffer = function addBuffer(name, buffer, mime, fileName) {
+this.parts.push({
+  type: &#x27;buffer&#x27;,
+  name: new Buffer(name, &#x27;utf8&#x27;),
+  fileName: typeof fileName === &#x27;string&#x27; ? new Buffer(fileName, &#x27;utf8&#x27;) : null,
+  buffer: buffer,
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.facebook-node-sdk.multipart" id="apidoc.module.facebook-node-sdk.multipart">module facebook-node-sdk.multipart</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.multipart.multipart" id="apidoc.element.facebook-node-sdk.multipart.multipart">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.</span>multipart
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Multipart() {
+  this.dash = new Buffer(&#x27;--&#x27;, &#x27;ascii&#x27;);
+
+  this.boundary = this.generateBoundary();
+
+  this.parts = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.facebook-node-sdk.multipart.prototype" id="apidoc.module.facebook-node-sdk.multipart.prototype">module facebook-node-sdk.multipart.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.multipart.prototype.addBuffer" id="apidoc.element.facebook-node-sdk.multipart.prototype.addBuffer">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.multipart.prototype.</span>addBuffer
+        <span class="apidocSignatureSpan">(name, buffer, mime, fileName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function addBuffer(name, buffer, mime, fileName) {
+  this.parts.push({
+    type: &#x27;buffer&#x27;,
+    name: new Buffer(name, &#x27;utf8&#x27;),
+    fileName: typeof fileName === &#x27;string&#x27; ? new Buffer(fileName, &#x27;utf8&#x27;) : null,
+    buffer: buffer,
+    size: buffer.length,
+    mime: new Buffer(mime || &#x27;application/octet-stream&#x27;, &#x27;ascii&#x27;)
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  size: size,
+  mime: new Buffer(mime || &#x27;application/octet-stream&#x27;, &#x27;ascii&#x27;)
+});
+};
+
+Multipart.prototype.addText = function addText(name, text) {
+var buffer = new Buffer(text, &#x27;ascii&#x27;);
+this.<span class="apidocCodeKeywordSpan">addBuffer</span>(name, buffer, &#x27;text/plain; charset=UTF-8&#x27;);
+};
+
+Multipart.prototype.contentTypeValuePrefix = new Buffer(&#x27;multipart/form-data; boundary=&#x27;, &#x27;ascii&#x27;);
+
+Multipart.prototype.getContentType = function getContentType() {
+var buffer = new Buffer(this.contentTypeValuePrefix.length + this.boundary.length);
+this.contentTypeValuePrefix.copy(buffer);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.multipart.prototype.addFile" id="apidoc.element.facebook-node-sdk.multipart.prototype.addFile">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.multipart.prototype.</span>addFile
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function __cbUtilWrapped__() {
+  var index = (callbackIndex === undefined) ? arguments.length - 1 : callbackIndex;
+  var callback = arguments[index];
+  if (typeof callback !== &#x27;function&#x27;) {
+    throw new Error(&#x27;Callback is not a function.&#x27;);
+  }
+  callback = wrapCallback(callback, addError);
+  arguments[index] = callback;
+  try {
+    fn.apply(this, arguments);
+  }
+  catch (err) {
+    callback(err, null);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      try {
+var key = keys.shift();
+if (key === undefined) {
+  afterParams();
+  return;
+}
+if (self.params[key].charAt(0) === &#x27;@&#x27;) {
+  multipart.<span class="apidocCodeKeywordSpan">addFile</span>(key, self.params[key].substr(1), function(err) {
+    if (err) {
+      callback(err, null);
+    }
+    else {
+      loop();
+    }
+  });
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.multipart.prototype.addStream" id="apidoc.element.facebook-node-sdk.multipart.prototype.addStream">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.multipart.prototype.</span>addStream
+        <span class="apidocSignatureSpan">(name, size, stream, mime, fileName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function addStream(name, size, stream, mime, fileName) {
+  stream.pause();
+  this.parts.push({
+    type: &#x27;stream&#x27;,
+    name: new Buffer(name, &#x27;utf8&#x27;),
+    fileName: typeof fileName === &#x27;string&#x27; ? new Buffer(fileName, &#x27;utf8&#x27;) : null,
+    stream: stream,
+    size: size,
+    mime: new Buffer(mime || &#x27;application/octet-stream&#x27;, &#x27;ascii&#x27;)
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (err) {
+    callback(err);
+    return;
+  }
+  try {
+    fs.fstat(fd, cb.returnToCallback(callback, false, function(stat) {
+      var fileName = path.basename(filePath);
+      self.<span class="apidocCodeKeywordSpan">addStream</span>(name, stat.size, fs.createReadStream(filePath, { fd: fd }), null
+, fileName);
+      return null;
+    }));
+  }
+  catch (e) {
+    callback(e);
+  }
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.multipart.prototype.addText" id="apidoc.element.facebook-node-sdk.multipart.prototype.addText">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.multipart.prototype.</span>addText
+        <span class="apidocSignatureSpan">(name, text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function addText(name, text) {
+  var buffer = new Buffer(text, &#x27;ascii&#x27;);
+  this.addBuffer(name, buffer, &#x27;text/plain; charset=UTF-8&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        }
+        else {
+          loop();
+        }
+      });
+    }
+    else {
+      multipart.<span class="apidocCodeKeywordSpan">addText</span>(key, self.params[key]);
+      loop();
+    }
+  }
+  catch (err) {
+    callback(err, null);
+  }
+})();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.multipart.prototype.generateBoundary" id="apidoc.element.facebook-node-sdk.multipart.prototype.generateBoundary">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.multipart.prototype.</span>generateBoundary
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function generateBoundary() {
+  return new Buffer(
+    Math.floor(Math.random() * 0x80000000).toString(36) +
+    Math.abs(Math.floor(Math.random() * 0x80000000) ^ +new Date()).toString(36),
+    &#x27;ascii&#x27;
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var path = require(&#x27;path&#x27;);
+var fs = require(&#x27;fs&#x27;);
+var cb = require(&#x27;./cbutil&#x27;);
+
+function Multipart() {
+  this.dash = new Buffer(&#x27;--&#x27;, &#x27;ascii&#x27;);
+
+  this.boundary = this.<span class="apidocCodeKeywordSpan">generateBoundary</span>();
+
+  this.parts = [];
+}
+
+Multipart.prototype.dash = null;
+Multipart.prototype.boundary = null;
+Multipart.prototype.crlf = new Buffer(&#x27;\r\n&#x27;, &#x27;ascii&#x27;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.multipart.prototype.getContentLength" id="apidoc.element.facebook-node-sdk.multipart.prototype.getContentLength">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.multipart.prototype.</span>getContentLength
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getContentLength() {
+
+  var self = this;
+  var length = this.parts.reduce(function(sum, part) {
+    var partLength = self.dash.length +
+                     self.boundary.length +
+                     self.crlf.length;
+
+    partLength += self.contentDispositionPrefix.length +
+                  part.name.length +
+                  self.contentDispositionSuffix.length;
+    if (part.fileName !== null) {
+      partLength += self.contentDispositionFilenamePrefix.length +
+                    part.fileName.length +
+                    self.contentDispositionFilenameSuffix.length;
+    }
+    partLength += self.crlf.length;
+
+    partLength += self.partContentTypePrefix.length +
+                  part.mime.length +
+                  self.crlf.length +
+                  self.crlf.length;
+
+    partLength += part.size + self.crlf.length;
+
+    return sum + partLength;
+  }, 0);
+
+  length += self.dash.length +
+            self.boundary.length +
+            self.dash.length +
+            self.crlf.length;
+
+  return length;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var options = {
+  host: self.host,
+  path: self.path,
+  port: self.port,
+  method: &#x27;POST&#x27;,
+  headers: {
+    &#x27;Content-Type&#x27;: multipart.getContentType(),
+    &#x27;Content-Length&#x27;: multipart.<span class="apidocCodeKeywordSpan">getContentLength</span>()
+  }
+};
+self.req = self.http.request(options);
+self.req.on(&#x27;error&#x27;, self.selfBoundResponseErrorHandler);
+self.req.on(&#x27;response&#x27;, self.selfBoundResponseHandler);
+multipart.writeToStream(self.req, function(err) {
+  if (err) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.multipart.prototype.getContentType" id="apidoc.element.facebook-node-sdk.multipart.prototype.getContentType">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.multipart.prototype.</span>getContentType
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getContentType() {
+  var buffer = new Buffer(this.contentTypeValuePrefix.length + this.boundary.length);
+  this.contentTypeValuePrefix.copy(buffer);
+  this.boundary.copy(buffer, this.contentTypeValuePrefix.length);
+  return buffer;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      try {
+var options = {
+  host: self.host,
+  path: self.path,
+  port: self.port,
+  method: &#x27;POST&#x27;,
+  headers: {
+    &#x27;Content-Type&#x27;: multipart.<span class="apidocCodeKeywordSpan">getContentType</span>(),
+    &#x27;Content-Length&#x27;: multipart.getContentLength()
+  }
+};
+self.req = self.http.request(options);
+self.req.on(&#x27;error&#x27;, self.selfBoundResponseErrorHandler);
+self.req.on(&#x27;response&#x27;, self.selfBoundResponseHandler);
+multipart.writeToStream(self.req, function(err) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.multipart.prototype.writeToStream" id="apidoc.element.facebook-node-sdk.multipart.prototype.writeToStream">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.multipart.prototype.</span>writeToStream
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function __cbUtilWrapped__() {
+  var index = (callbackIndex === undefined) ? arguments.length - 1 : callbackIndex;
+  var callback = arguments[index];
+  if (typeof callback !== &#x27;function&#x27;) {
+    throw new Error(&#x27;Callback is not a function.&#x27;);
+  }
+  callback = wrapCallback(callback, addError);
+  arguments[index] = callback;
+  try {
+    fn.apply(this, arguments);
+  }
+  catch (err) {
+    callback(err, null);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    &#x27;Content-Type&#x27;: multipart.getContentType(),
+    &#x27;Content-Length&#x27;: multipart.getContentLength()
+  }
+};
+self.req = self.http.request(options);
+self.req.on(&#x27;error&#x27;, self.selfBoundResponseErrorHandler);
+self.req.on(&#x27;response&#x27;, self.selfBoundResponseHandler);
+multipart.<span class="apidocCodeKeywordSpan">writeToStream</span>(self.req, function(err) {
+  if (err) {
+    onerror(err);
+  }
+  else {
+    self.req.end();
+  }
+});
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.facebook-node-sdk.requestutil" id="apidoc.module.facebook-node-sdk.requestutil">module facebook-node-sdk.requestutil</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.requestutil.FacebookApiRequest" id="apidoc.element.facebook-node-sdk.requestutil.FacebookApiRequest">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.requestutil.</span>FacebookApiRequest
+        <span class="apidocSignatureSpan">(http, host, port, path, params)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function FacebookApiRequest(http, host, port, path, params) {
+  assert.equal(this.http, null);
+  assert.equal(this.host, null);
+  assert.equal(this.port, null);
+  assert.equal(this.path, null);
+  assert.equal(this.params, null);
+
+  // TODO request timeout setting
+  // TODO user agent setting
+
+  this.http = http;
+  this.host = host;
+  this.port = port;
+  this.path = path;
+  this.params = params;
+
+  this.selfBoundResponseErrorHandler = bindSelf(this, this.handleResponseError);
+  this.selfBoundResponseHandler = bindSelf(this, this.handleResponse);
+  this.selfBoundDataHandler = bindSelf(this, this.handleData);
+  this.selfBoundDataErrorHandler = bindSelf(this, this.handleDataError);
+  this.selfBoundEndHandler = bindSelf(this, this.handleEnd);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.requestutil.requestFacebookApi" id="apidoc.element.facebook-node-sdk.requestutil.requestFacebookApi">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.requestutil.</span>requestFacebookApi
+        <span class="apidocSignatureSpan">(http, host, port, path, params, withMultipart, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">requestFacebookApi = function (http, host, port, path, params, withMultipart, callback) {
+  var req = new FacebookApiRequest(http, host, port, path, params);
+  req.start(withMultipart, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.facebook-node-sdk.super_" id="apidoc.module.facebook-node-sdk.super_">module facebook-node-sdk.super_</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.super_" id="apidoc.element.facebook-node-sdk.super_.super_">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.</span>super_
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function BaseFacebook(config) {
+  if (config.hasOwnProperty(&#x27;request&#x27;)) {
+    this.request = config.request;
+  }
+  if (config.hasOwnProperty(&#x27;response&#x27;)) {
+    this.response = config.response;
+  }
+  if (config.hasOwnProperty(&#x27;currentUrl&#x27;)) {
+    this.currentUrl = config.currentUrl;
+  }
+  this.setAppId(config.appId);
+  this.setAppSecret(config.secret);
+  if (config.hasOwnProperty(&#x27;fileUpload&#x27;)) {
+    this.setFileUploadSupport(config.fileUpload);
+  }
+
+  var state = this.getPersistentData(&#x27;state&#x27;);
+  if (state) {
+    this.state = state;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.FacebookApiError" id="apidoc.element.facebook-node-sdk.super_.FacebookApiError">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.</span>FacebookApiError
+        <span class="apidocSignatureSpan">(result)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function FacebookApiError(result) {
+  this.result = result;
+
+  this.code = this.result.hasOwnProperty(&#x27;error_code&#x27;) ? result.error_code : 0;
+
+  if (result.hasOwnProperty(&#x27;error_description&#x27;)) {
+    // OAuth 2.0 Draft 10 style
+    var msg = result.error_description;
+  } else if (result.hasOwnProperty(&#x27;error&#x27;) &#x26;&#x26; result.error &#x26;&#x26; typeof (result.error) === &#x27;object&#x27;) {
+    // OAuth 2.0 Draft 00 style
+    var msg = result.error.message;
+  } else if (result.hasOwnProperty(&#x27;error_msg&#x27;)) {
+    // Rest server style
+    var msg = result.error_msg;
+  } else {
+    var msg = &#x27;Unknown Error. Check getResult()&#x27;;
+  }
+
+  Error.apply(this, []);
+  this.message = msg;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.facebook-node-sdk.super_.FacebookApiError" id="apidoc.module.facebook-node-sdk.super_.FacebookApiError">module facebook-node-sdk.super_.FacebookApiError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.FacebookApiError.FacebookApiError" id="apidoc.element.facebook-node-sdk.super_.FacebookApiError.FacebookApiError">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.</span>FacebookApiError
+        <span class="apidocSignatureSpan">(result)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function FacebookApiError(result) {
+  this.result = result;
+
+  this.code = this.result.hasOwnProperty(&#x27;error_code&#x27;) ? result.error_code : 0;
+
+  if (result.hasOwnProperty(&#x27;error_description&#x27;)) {
+    // OAuth 2.0 Draft 10 style
+    var msg = result.error_description;
+  } else if (result.hasOwnProperty(&#x27;error&#x27;) &#x26;&#x26; result.error &#x26;&#x26; typeof (result.error) === &#x27;object&#x27;) {
+    // OAuth 2.0 Draft 00 style
+    var msg = result.error.message;
+  } else if (result.hasOwnProperty(&#x27;error_msg&#x27;)) {
+    // Rest server style
+    var msg = result.error_msg;
+  } else {
+    var msg = &#x27;Unknown Error. Check getResult()&#x27;;
+  }
+
+  Error.apply(this, []);
+  this.message = msg;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.FacebookApiError.super_" id="apidoc.element.facebook-node-sdk.super_.FacebookApiError.super_">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.FacebookApiError.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Error() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.facebook-node-sdk.super_.FacebookApiError.prototype" id="apidoc.module.facebook-node-sdk.super_.FacebookApiError.prototype">module facebook-node-sdk.super_.FacebookApiError.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.FacebookApiError.prototype.getResult" id="apidoc.element.facebook-node-sdk.super_.FacebookApiError.prototype.getResult">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.FacebookApiError.prototype.</span>getResult
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getResult = function () {
+  return this.result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.FacebookApiError.prototype.getType" id="apidoc.element.facebook-node-sdk.super_.FacebookApiError.prototype.getType">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.FacebookApiError.prototype.</span>getType
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getType = function () {
+  if (this.result.hasOwnProperty(&#x27;error&#x27;)) {
+    var error = this.result.error;
+    if (typeof error === &#x27;string&#x27;) {
+      // OAuth 2.0 Draft 10 style
+      return error;
+    }
+    else if (error &#x26;&#x26; typeof error === &#x27;object&#x27;) {
+      // OAuth 2.0 Draft 00 style
+      if (error.hasOwnProperty(&#x27;type&#x27;)) {
+        return error.type;
+      }
+    }
+  }
+
+  return &#x27;Error&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.FacebookApiError.prototype.toString" id="apidoc.element.facebook-node-sdk.super_.FacebookApiError.prototype.toString">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.FacebookApiError.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+  var str = this.getType() + &#x27;: &#x27;;
+  if (this.code !== 0) {
+    str += this.code + &#x27;: &#x27;;
+  }
+  return str + this.message;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Multipart.prototype.dash = null;
+Multipart.prototype.boundary = null;
+Multipart.prototype.crlf = new Buffer(&#x27;\r\n&#x27;, &#x27;ascii&#x27;);
+
+Multipart.prototype.generateBoundary = function generateBoundary() {
+return new Buffer(
+  Math.floor(Math.random() * 0x80000000).<span class="apidocCodeKeywordSpan">toString</span>(36) +
+  Math.abs(Math.floor(Math.random() * 0x80000000) ^ +new Date()).toString(36),
+  &#x27;ascii&#x27;
+);
+};
+
+Multipart.prototype.addFile = function addFile(name, filePath, callback) {
+var self = this;
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.facebook-node-sdk.super_.prototype" id="apidoc.module.facebook-node-sdk.super_.prototype">module facebook-node-sdk.super_.prototype</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.api" id="apidoc.element.facebook-node-sdk.super_.prototype.api">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>api
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function __cbUtilWrapped__() {
+  var index = (callbackIndex === undefined) ? arguments.length - 1 : callbackIndex;
+  var callback = arguments[index];
+  if (typeof callback !== &#x27;function&#x27;) {
+    throw new Error(&#x27;Callback is not a function.&#x27;);
+  }
+  callback = wrapCallback(callback, addError);
+  arguments[index] = callback;
+  try {
+    fn.apply(this, arguments);
+  }
+  catch (err) {
+    callback(err, null);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## Synopsis
+
+var Facebook = require(&#x27;facebook-node-sdk&#x27;);
+
+var facebook = new Facebook({ appID: &#x27;YOUR_APP_ID&#x27;, secret: &#x27;YOUR_APP_SECRET&#x27; });
+
+facebook.<span class="apidocCodeKeywordSpan">api</span>(&#x27;/amachang&#x27;, function(err, data) {
+  console.log(data); // =&#x3e; { id: ... }
+});
+
+### With express framework (as connect middleware)
+
+var express = require(&#x27;express&#x27;);
+var Facebook = require(&#x27;facebook-node-sdk&#x27;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.base64UrlDecode" id="apidoc.element.facebook-node-sdk.super_.prototype.base64UrlDecode">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>base64UrlDecode
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">base64UrlDecode = function (input) {
+  var base64 = input.replace(/-/g, &#x27;+&#x27;).replace(/_/g, &#x27;/&#x27;);
+  return new Buffer(base64, &#x27;base64&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.clearCookie" id="apidoc.element.facebook-node-sdk.super_.prototype.clearCookie">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>clearCookie
+        <span class="apidocSignatureSpan">(key, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clearCookie = function (key, options) {
+  if (this.response) {
+    this.response.clearCookie.apply(this.response, arguments);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.createApiError" id="apidoc.element.facebook-node-sdk.super_.prototype.createApiError">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>createApiError
+        <span class="apidocSignatureSpan">(result)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createApiError = function (result) {
+  var err = new FacebookApiError(result);
+  switch (err.getType()) {
+    // OAuth 2.0 Draft 00 style
+    case &#x27;OAuthException&#x27;:
+      // OAuth 2.0 Draft 10 style
+    case &#x27;invalid_token&#x27;:
+      // REST server errors are just Exceptions
+    case &#x27;Exception&#x27;:
+      var message = err.message;
+      if ((message.indexOf(&#x27;Error validating access token&#x27;) !== -1) ||
+          (message.indexOf(&#x27;Invalid OAuth access token&#x27;) !== -1) ||
+          (message.indexOf(&#x27;An active access token must be used&#x27;) !== -1)) {
+        this.destroySession();
+      }
+      break;
+  }
+  return err;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.destroySession" id="apidoc.element.facebook-node-sdk.super_.prototype.destroySession">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>destroySession
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">destroySession = function () {
+  this.accessToken = null;
+  this.signedRequest = null;
+  this.user = null;
+  this.clearAllPersistentData();
+
+  if (this.request) {
+    // Javascript sets a cookie that will be used in getSignedRequest that we
+    // need to clear if we can
+    var cookieName = this.getSignedRequestCookieName();
+
+    if (this.hasCookie(cookieName)) {
+      if (this.request.cookies) {
+        delete this.request.cookies[cookieName];
+      }
+
+      if (this.response) {
+        if (!this.sentHeaders()) {
+          // The base domain is stored in the metadata cookie if not we fallback
+          // to the current hostname
+          var host = this.request.headers[&#x27;x-forwarded-host&#x27;] || this.request.headers.host;
+          var baseDomain = &#x27;.&#x27; + host;
+
+          var metadata = this.getMetadataCookie();
+          if (metadata.hasOwnProperty(&#x27;base_domain&#x27;) &#x26;&#x26; typeof metadata[&#x27;base_domain&#x27;] === &#x27;string&#x27; &#x26;&#x26; metadata[&#x27;base_domain&#x27;] !== &#x27;&#x27;) {
+            baseDomain = metadata[&#x27;base_domain&#x27;];
+          }
+
+          this.clearCookie(cookieName, { path: &#x27;/&#x27;, domain: baseDomain });
+        }
+        else {
+          this.errorLog(
+            &#x27;There exists a cookie that we wanted to clear that we couldn\&#x27;t &#x27; +
+            &#x27;clear because headers was already sent. Make sure to do the first &#x27; +
+            &#x27;API call before outputing anything&#x27;
+          );
+        }
+      }
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.errorLog" id="apidoc.element.facebook-node-sdk.super_.prototype.errorLog">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>errorLog
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">errorLog = function (msg) {
+  util.debug(msg);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+function wrapCallback(callback, /* opt */addError) {
+assert.ok(callback.name !== &#x27;__cbUtilwrappedCallback__&#x27;);
+var called = false;
+return function __cbUtilWrappedCallback__() {
+  if (called === true) {
+    exports.<span class="apidocCodeKeywordSpan">errorLog</span>(new Error(&#x27;Cannot call callback twice.&#x27;).stack);
+  }
+  else {
+    called = true;
+    try {
+      if (addError === true) {
+        // to array
+        var args = Array.prototype.slice.call(arguments);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.establishCSRFTokenState" id="apidoc.element.facebook-node-sdk.super_.prototype.establishCSRFTokenState">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>establishCSRFTokenState
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">establishCSRFTokenState = function () {
+  if (this.state === null) {
+    var chars = &#x27;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789&#x27;;
+    var buf = [];
+    for (var i = 0; i &#x3c; 32; i++) {
+      buf.push(chars[Math.floor(chars.length * Math.random())]);
+    }
+    this.state = buf.join(&#x27;&#x27;);
+    this.setPersistentData(&#x27;state&#x27;, this.state);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.getAccessToken" id="apidoc.element.facebook-node-sdk.super_.prototype.getAccessToken">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getAccessToken
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function __cbUtilWrapped__() {
+  var index = (callbackIndex === undefined) ? arguments.length - 1 : callbackIndex;
+  var callback = arguments[index];
+  if (typeof callback !== &#x27;function&#x27;) {
+    throw new Error(&#x27;Callback is not a function.&#x27;);
+  }
+  callback = wrapCallback(callback, addError);
+  arguments[index] = callback;
+  try {
+    fn.apply(this, arguments);
+  }
+  catch (err) {
+    callback(err, null);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.getAccessTokenFromCode" id="apidoc.element.facebook-node-sdk.super_.prototype.getAccessTokenFromCode">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getAccessTokenFromCode
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function __cbUtilWrapped__() {
+  var index = (callbackIndex === undefined) ? arguments.length - 1 : callbackIndex;
+  var callback = arguments[index];
+  if (typeof callback !== &#x27;function&#x27;) {
+    throw new Error(&#x27;Callback is not a function.&#x27;);
+  }
+  callback = wrapCallback(callback, addError);
+  arguments[index] = callback;
+  try {
+    fn.apply(this, arguments);
+  }
+  catch (err) {
+    callback(err, null);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.getApiHost" id="apidoc.element.facebook-node-sdk.super_.prototype.getApiHost">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getApiHost
+        <span class="apidocSignatureSpan">(method)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getApiHost = function (method) {
+  var host = &#x27;api.facebook.com&#x27;;
+  if (this.apiReadOnlyCalls.hasOwnProperty(method.toLowerCase())) {
+    host = &#x27;api-read.facebook.com&#x27;;
+  }
+  else if (method.toLowerCase() === &#x27;video.upload&#x27;) {
+    host = &#x27;api-video.facebook.com&#x27;;
+  }
+  return host;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.getApiSecret" id="apidoc.element.facebook-node-sdk.super_.prototype.getApiSecret">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getApiSecret
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getApiSecret = function () {
+  return this.appSecret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.getAppId" id="apidoc.element.facebook-node-sdk.super_.prototype.getAppId">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getAppId
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getAppId = function () {
+  return this.appId;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.getAppSecret" id="apidoc.element.facebook-node-sdk.super_.prototype.getAppSecret">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getAppSecret
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getAppSecret = function () {
+  return this.appSecret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.getApplicationAccessToken" id="apidoc.element.facebook-node-sdk.super_.prototype.getApplicationAccessToken">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getApplicationAccessToken
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getApplicationAccessToken = function () {
+  return this.appId + &#x27;|&#x27; + this.appSecret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.getCode" id="apidoc.element.facebook-node-sdk.super_.prototype.getCode">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getCode
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getCode = function () {
+  var code = this.getRequestParam(&#x27;code&#x27;);
+  if (code !== null) {
+    var state = this.getRequestParam(&#x27;state&#x27;);
+    if (this.state !== null &#x26;&#x26; state !== null &#x26;&#x26; this.state === state) {
+
+      // CSRF state has done its job, so clear it
+      this.state = null;
+      this.clearPersistentData(&#x27;state&#x27;);
+      return code;
+    } else {
+      this.errorLog(&#x27;CSRF state token does not match one provided.&#x27;);
+      return false;
+    }
+  }
+
+  return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.getCookie" id="apidoc.element.facebook-node-sdk.super_.prototype.getCookie">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getCookie
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getCookie = function (key) {
+  if (this.hasCookie(key)) {
+    return this.request.cookies[key];
+  }
+  else {
+    return null;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.getCurrentUrl" id="apidoc.element.facebook-node-sdk.super_.prototype.getCurrentUrl">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getCurrentUrl
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getCurrentUrl = function () {
+  if (this.currentUrl !== null) {
+    return this.currentUrl;
+  }
+
+  if (!this.request) {
+    throw new Error(&#x27;No request object.&#x27;);
+  }
+
+  var req = this.request;
+  var conn = req.connection;
+  var headers = req.headers;
+  if (conn.pair || req.https === &#x27;on&#x27; || headers[&#x27;x-forwarded-proto&#x27;] === &#x27;https&#x27;) {
+    var protocol = &#x27;https://&#x27;;
+  }
+  else {
+    var protocol = &#x27;http://&#x27;;
+  }
+
+  var host = headers[&#x27;x-forwarded-host&#x27;] || headers.host;
+  var path = req.url;
+
+  var currentUrl = protocol + host + path;
+
+  var parts = url.parse(currentUrl);
+
+  if (parts.query) {
+    var params = parts.query.split(/&#x26;/);
+    var self = this;
+    delete parts.href;
+    delete parts.path;
+    delete parts.query;
+
+    parts.search = &#x27;&#x27;;
+
+    params = params.filter(function(param) { return self.shouldRetainParam(param) });
+    if (params.length &#x3e; 0) {
+      parts.search = &#x27;?&#x27; + params.join(&#x27;&#x26;&#x27;);
+    }
+  }
+
+  return url.format(parts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.getFileUploadSupport" id="apidoc.element.facebook-node-sdk.super_.prototype.getFileUploadSupport">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getFileUploadSupport
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getFileUploadSupport = function () {
+  return this.fileUploadSupport;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.getLoginStatusUrl" id="apidoc.element.facebook-node-sdk.super_.prototype.getLoginStatusUrl">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getLoginStatusUrl
+        <span class="apidocSignatureSpan">(params)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLoginStatusUrl = function (params) {
+  var currentUrl = this.getCurrentUrl();
+  return &#x27;https://www.facebook.com/extern/login_status.php?&#x27; + querystring.stringify(this.mergeObject({
+    api_key: this.getAppId(),
+    no_session: currentUrl,
+    no_user: currentUrl,
+    ok_session: currentUrl,
+    session_version: 3
+  }, params));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.getLoginUrl" id="apidoc.element.facebook-node-sdk.super_.prototype.getLoginUrl">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getLoginUrl
+        <span class="apidocSignatureSpan">(params)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLoginUrl = function (params) {
+  if (!params) {
+    params = {};
+  }
+  this.establishCSRFTokenState();
+  var currentUrl = this.getCurrentUrl();
+
+  // if &#x27;scope&#x27; is passed as an array, convert to comma separated list
+  var scopeParams = params.hasOwnProperty(&#x27;scope&#x27;) ? params.scope : null;
+  if (scopeParams &#x26;&#x26; isArray(scopeParams)) {
+    params.scope = scopeParams.join(&#x27;,&#x27;);
+  }
+
+  return &#x27;https://www.facebook.com/dialog/oauth?&#x27; + querystring.stringify(this.mergeObject({
+    client_id: this.getAppId(),
+    redirect_uri: currentUrl, // possibly overwritten
+    state: this.state
+  }, params));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.getLogoutUrl" id="apidoc.element.facebook-node-sdk.super_.prototype.getLogoutUrl">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getLogoutUrl
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function __cbUtilWrapped__() {
+  var index = (callbackIndex === undefined) ? arguments.length - 1 : callbackIndex;
+  var callback = arguments[index];
+  if (typeof callback !== &#x27;function&#x27;) {
+    throw new Error(&#x27;Callback is not a function.&#x27;);
+  }
+  callback = wrapCallback(callback, addError);
+  arguments[index] = callback;
+  try {
+    fn.apply(this, arguments);
+  }
+  catch (err) {
+    callback(err, null);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.getMetadataCookie" id="apidoc.element.facebook-node-sdk.super_.prototype.getMetadataCookie">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getMetadataCookie
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getMetadataCookie() {
+  var cookieName = this.getMetadataCookieName();
+  if (!this.hasCookie(cookieName)) {
+    return {};
+  }
+
+  // The cookie value can be wrapped in &#x22;-characters so remove them
+  var cookieValue = this.getCookie(cookieName);
+  cookieValue = cookieValue.replace(/&#x22;/g, &#x27;&#x27;);
+
+  if (cookieValue === &#x27;&#x27;) {
+    return {};
+  }
+
+  var parts = cookieValue.split(/&#x26;/);
+  var metadata = {};
+  for (var i = 0; i &#x3c; parts.length; i++) {
+    var part = parts[i];
+    var pair = part.split(/=/, 2);
+    if (pair[0] !== &#x27;&#x27;) {
+      metadata[decodeURIComponent(pair[0])] = (pair.length &#x3e; 1) ? decodeURIComponent(pair[1]) : &#x27;&#x27;;
+    }
+  }
+
+  return metadata;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.getMetadataCookieName" id="apidoc.element.facebook-node-sdk.super_.prototype.getMetadataCookieName">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getMetadataCookieName
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getMetadataCookieName() {
+  return &#x27;fbm_&#x27; + this.getAppId();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.getRequestParam" id="apidoc.element.facebook-node-sdk.super_.prototype.getRequestParam">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getRequestParam
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getRequestParam = function (key) {
+  if (!this.request) {
+    return null;
+  }
+  if (this.request.query &#x26;&#x26; this.request.query.hasOwnProperty(key)) {
+    return this.request.query[key];
+  }
+  else if (this.request.body &#x26;&#x26; this.request.body.hasOwnProperty(key)) {
+    return this.request.body[key];
+  }
+  else {
+    return null;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.getSignedRequest" id="apidoc.element.facebook-node-sdk.super_.prototype.getSignedRequest">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getSignedRequest
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getSignedRequest = function () {
+  if (this.signedRequest === null) {
+    var param = this.getRequestParam(&#x27;signed_request&#x27;);
+    if (param !== null) {
+      parseSignedRequestWrapped(this, param);
+    }
+    if (this.signedRequest === null) {
+      var cookieName = this.getSignedRequestCookieName();
+      var cookieValue = this.getCookie(cookieName);
+      if (cookieValue !== null) {
+        parseSignedRequestWrapped(this, cookieValue);
+      }
+    }
+  }
+
+  function parseSignedRequestWrapped(self, str) {
+    try {
+      self.signedRequest = self.parseSignedRequest(str);
+    }
+    catch (err) {
+      self.signedRequest = null;
+      self.errorLog(&#x27;Parse error sigened_request cookie: &#x27; + str);
+    }
+  }
+
+  return this.signedRequest;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.getSignedRequestCookieName" id="apidoc.element.facebook-node-sdk.super_.prototype.getSignedRequestCookieName">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getSignedRequestCookieName
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getSignedRequestCookieName = function () {
+  return &#x27;fbsr_&#x27; + this.getAppId();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.getUser" id="apidoc.element.facebook-node-sdk.super_.prototype.getUser">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getUser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function __cbUtilWrapped__() {
+  var index = (callbackIndex === undefined) ? arguments.length - 1 : callbackIndex;
+  var callback = arguments[index];
+  if (typeof callback !== &#x27;function&#x27;) {
+    throw new Error(&#x27;Callback is not a function.&#x27;);
+  }
+  callback = wrapCallback(callback, addError);
+  arguments[index] = callback;
+  try {
+    fn.apply(this, arguments);
+  }
+  catch (err) {
+    callback(err, null);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.getUserAccessToken" id="apidoc.element.facebook-node-sdk.super_.prototype.getUserAccessToken">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getUserAccessToken
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function __cbUtilWrapped__() {
+  var index = (callbackIndex === undefined) ? arguments.length - 1 : callbackIndex;
+  var callback = arguments[index];
+  if (typeof callback !== &#x27;function&#x27;) {
+    throw new Error(&#x27;Callback is not a function.&#x27;);
+  }
+  callback = wrapCallback(callback, addError);
+  arguments[index] = callback;
+  try {
+    fn.apply(this, arguments);
+  }
+  catch (err) {
+    callback(err, null);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.getUserFromAccessToken" id="apidoc.element.facebook-node-sdk.super_.prototype.getUserFromAccessToken">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getUserFromAccessToken
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function __cbUtilWrapped__() {
+  var index = (callbackIndex === undefined) ? arguments.length - 1 : callbackIndex;
+  var callback = arguments[index];
+  if (typeof callback !== &#x27;function&#x27;) {
+    throw new Error(&#x27;Callback is not a function.&#x27;);
+  }
+  callback = wrapCallback(callback, addError);
+  arguments[index] = callback;
+  try {
+    fn.apply(this, arguments);
+  }
+  catch (err) {
+    callback(err, null);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.getUserFromAvailableData" id="apidoc.element.facebook-node-sdk.super_.prototype.getUserFromAvailableData">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>getUserFromAvailableData
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function __cbUtilWrapped__() {
+  var index = (callbackIndex === undefined) ? arguments.length - 1 : callbackIndex;
+  var callback = arguments[index];
+  if (typeof callback !== &#x27;function&#x27;) {
+    throw new Error(&#x27;Callback is not a function.&#x27;);
+  }
+  callback = wrapCallback(callback, addError);
+  arguments[index] = callback;
+  try {
+    fn.apply(this, arguments);
+  }
+  catch (err) {
+    callback(err, null);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.graph" id="apidoc.element.facebook-node-sdk.super_.prototype.graph">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>graph
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function __cbUtilWrapped__() {
+  var index = (callbackIndex === undefined) ? arguments.length - 1 : callbackIndex;
+  var callback = arguments[index];
+  if (typeof callback !== &#x27;function&#x27;) {
+    throw new Error(&#x27;Callback is not a function.&#x27;);
+  }
+  callback = wrapCallback(callback, addError);
+  arguments[index] = callback;
+  try {
+    fn.apply(this, arguments);
+  }
+  catch (err) {
+    callback(err, null);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.hasCookie" id="apidoc.element.facebook-node-sdk.super_.prototype.hasCookie">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>hasCookie
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hasCookie = function (key) {
+  return this.request &#x26;&#x26; this.request.cookies &#x26;&#x26; this.request.cookies.hasOwnProperty(key);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.isVideoPost" id="apidoc.element.facebook-node-sdk.super_.prototype.isVideoPost">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>isVideoPost
+        <span class="apidocSignatureSpan">(path, method)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isVideoPost(path, method) {
+  method = method || &#x27;GET&#x27;;
+  if (method == &#x27;POST&#x27; &#x26;&#x26; path.match(/^(\/)(.+)(\/)(videos)$/)) {
+    return true;
+  }
+  return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.makeRequest" id="apidoc.element.facebook-node-sdk.super_.prototype.makeRequest">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>makeRequest
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function __cbUtilWrapped__() {
+  var index = (callbackIndex === undefined) ? arguments.length - 1 : callbackIndex;
+  var callback = arguments[index];
+  if (typeof callback !== &#x27;function&#x27;) {
+    throw new Error(&#x27;Callback is not a function.&#x27;);
+  }
+  callback = wrapCallback(callback, addError);
+  arguments[index] = callback;
+  try {
+    fn.apply(this, arguments);
+  }
+  catch (err) {
+    callback(err, null);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.mergeObject" id="apidoc.element.facebook-node-sdk.super_.prototype.mergeObject">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>mergeObject
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mergeObject = function () {
+  var obj = {};
+  for (var i = 0; i &#x3c; arguments.length; i++) {
+    var arg = arguments[i];
+    for (var name in arg) {
+      if (arg.hasOwnProperty(name)) {
+        obj[name] = arg[name];
+      }
+    }
+  }
+  return obj;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.oauthRequest" id="apidoc.element.facebook-node-sdk.super_.prototype.oauthRequest">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>oauthRequest
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function __cbUtilWrapped__() {
+  var index = (callbackIndex === undefined) ? arguments.length - 1 : callbackIndex;
+  var callback = arguments[index];
+  if (typeof callback !== &#x27;function&#x27;) {
+    throw new Error(&#x27;Callback is not a function.&#x27;);
+  }
+  callback = wrapCallback(callback, addError);
+  arguments[index] = callback;
+  try {
+    fn.apply(this, arguments);
+  }
+  catch (err) {
+    callback(err, null);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.parseSignedRequest" id="apidoc.element.facebook-node-sdk.super_.prototype.parseSignedRequest">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>parseSignedRequest
+        <span class="apidocSignatureSpan">(signedRequest)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseSignedRequest = function (signedRequest) {
+  var splittedSignedRequest = signedRequest.split(/\./);
+  var encodedSig = splittedSignedRequest.shift();
+  var payload = splittedSignedRequest.join(&#x27;.&#x27;);
+
+  // decode the data
+  var sig = this.base64UrlDecode(encodedSig);
+
+  // must catch in caller
+  var data = JSON.parse(this.base64UrlDecode(payload).toString(&#x27;utf8&#x27;));
+
+  if (data.algorithm.toUpperCase() !== &#x27;HMAC-SHA256&#x27;) {
+    this.errorLog(&#x27;Unknown algorithm. Expected HMAC-SHA256&#x27;);
+    return null;
+  }
+
+  // check sig
+  var hmac = crypto.createHmac(&#x27;sha256&#x27;, this.getAppSecret());
+  hmac.update(payload);
+  var expectedSig = hmac.digest(&#x27;base64&#x27;);
+  if (sig.toString(&#x27;base64&#x27;) !== expectedSig) {
+    this.errorLog(&#x27;Bad Signed JSON signature!&#x27;);
+    return null;
+  }
+
+  return data;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.restserver" id="apidoc.element.facebook-node-sdk.super_.prototype.restserver">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>restserver
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function __cbUtilWrapped__() {
+  var index = (callbackIndex === undefined) ? arguments.length - 1 : callbackIndex;
+  var callback = arguments[index];
+  if (typeof callback !== &#x27;function&#x27;) {
+    throw new Error(&#x27;Callback is not a function.&#x27;);
+  }
+  callback = wrapCallback(callback, addError);
+  arguments[index] = callback;
+  try {
+    fn.apply(this, arguments);
+  }
+  catch (err) {
+    callback(err, null);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.sentHeaders" id="apidoc.element.facebook-node-sdk.super_.prototype.sentHeaders">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>sentHeaders
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sentHeaders = function () {
+  return this.response &#x26;&#x26; this.response._header;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.setAccessToken" id="apidoc.element.facebook-node-sdk.super_.prototype.setAccessToken">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>setAccessToken
+        <span class="apidocSignatureSpan">(accessToken)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setAccessToken = function (accessToken) {
+  this.accessToken = accessToken;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.setApiSecret" id="apidoc.element.facebook-node-sdk.super_.prototype.setApiSecret">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>setApiSecret
+        <span class="apidocSignatureSpan">(appSecret)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setApiSecret = function (appSecret) {
+  this.appSecret = appSecret;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.setAppId" id="apidoc.element.facebook-node-sdk.super_.prototype.setAppId">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>setAppId
+        <span class="apidocSignatureSpan">(appId)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setAppId = function (appId) {
+  this.appId = appId;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.setAppSecret" id="apidoc.element.facebook-node-sdk.super_.prototype.setAppSecret">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>setAppSecret
+        <span class="apidocSignatureSpan">(appSecret)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setAppSecret = function (appSecret) {
+  this.appSecret = appSecret;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.setFileUploadSupport" id="apidoc.element.facebook-node-sdk.super_.prototype.setFileUploadSupport">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>setFileUploadSupport
+        <span class="apidocSignatureSpan">(fileUploadSupport)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setFileUploadSupport = function (fileUploadSupport) {
+  this.fileUploadSupport = fileUploadSupport;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.shouldRetainParam" id="apidoc.element.facebook-node-sdk.super_.prototype.shouldRetainParam">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>shouldRetainParam
+        <span class="apidocSignatureSpan">(param)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">shouldRetainParam = function (param) {
+  var splited = param.split(/=/);
+  return !((splited.length &#x3e; 1) &#x26;&#x26; this.dropQueryParams.hasOwnProperty(splited[0]));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-node-sdk.super_.prototype.useFileUploadSupport" id="apidoc.element.facebook-node-sdk.super_.prototype.useFileUploadSupport">
+        function <span class="apidocSignatureSpan">facebook-node-sdk.super_.prototype.</span>useFileUploadSupport
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">useFileUploadSupport = function () {
+  return this.getFileUploadSupport();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
